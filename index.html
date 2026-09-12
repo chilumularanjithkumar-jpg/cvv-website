@@ -313,6 +313,36 @@ footer{background:var(--white);border-top:1px solid var(--rule-soft);}
   padding-top:20px;padding-bottom:20px;font-size:13.5px;color:var(--ink-soft);}
 .foot-line{color:var(--azure);font-weight:500;letter-spacing:0.05em;font-size:12.5px;}
 
+
+/* ---------- floating WhatsApp ---------- */
+.wa-fab{
+  position:fixed;right:22px;bottom:22px;z-index:300;display:flex;align-items:center;gap:0;
+  text-decoration:none;background:#25D366;color:#fff;border-radius:100px;
+  padding:15px;box-shadow:0 10px 30px rgba(37,211,102,.45),0 2px 8px rgba(11,30,66,.2);
+  transition:gap .22s ease,padding .22s ease,transform .15s ease;
+}
+.wa-fab svg{width:28px;height:28px;fill:#fff;flex:0 0 auto;}
+.wa-fab span{
+  font-size:15px;font-weight:600;white-space:nowrap;max-width:0;overflow:hidden;
+  transition:max-width .22s ease;
+}
+.wa-fab:hover{gap:11px;padding:15px 24px 15px 17px;transform:translateY(-2px);}
+.wa-fab:hover span{max-width:190px;}
+.wa-fab::after{
+  content:"";position:absolute;inset:0;border-radius:100px;border:2px solid #25D366;
+  animation:waPing 2.6s ease-out infinite;pointer-events:none;
+}
+@keyframes waPing{
+  0%{transform:scale(1);opacity:.55;}
+  70%,100%{transform:scale(1.35);opacity:0;}
+}
+@media (prefers-reduced-motion:reduce){ .wa-fab::after{animation:none;opacity:0;} }
+@media (max-width:640px){
+  .wa-fab{right:16px;bottom:16px;padding:14px;}
+  .wa-fab svg{width:26px;height:26px;}
+  .wa-fab:hover{gap:0;padding:14px;}
+  .wa-fab:hover span{max-width:0;}
+}
 /* ================= responsive ================= */
 @media (max-width:1050px){
   .svc-grid{grid-template-columns:1fr;}
@@ -623,9 +653,9 @@ footer{background:var(--white);border-top:1px solid var(--rule-soft);}
         </div>
 
         <div class="reach">
-          <a href="https://wa.me/919603013033" target="_blank" rel="noopener">
+          <a href="https://wa.me/918142168446?text=Hi%20CVV%20Technologies%2C%20I%27d%20like%20to%20enquire%20about%20a%20project" target="_blank" rel="noopener">
             <span class="r-ico"><svg viewBox="0 0 24 24"><path d="M3 20l1.6-4.2A8 8 0 1 1 8.6 19L3 20z"/></svg></span>
-            <span><b>WhatsApp</b><em>Fastest reply, most days</em></span>
+            <span><b>WhatsApp &middot; +91 81421 68446</b><em>Fastest reply, most days</em></span>
           </a>
           <a href="mailto:contact@cvvtechnologies.com">
             <span class="r-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
@@ -709,7 +739,7 @@ footer{background:var(--white);border-top:1px solid var(--rule-soft);}
       <h4>Reach us</h4>
       <a href="tel:+919603013033">+91 96030 13033</a>
       <a href="mailto:contact@cvvtechnologies.com">contact@cvvtechnologies.com</a>
-      <a href="https://wa.me/919603013033" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/918142168446?text=Hi%20CVV%20Technologies%2C%20I%27d%20like%20to%20enquire%20about%20a%20project" target="_blank" rel="noopener">WhatsApp &middot; +91 81421 68446</a>
       <p class="foot-addr">10-2-705/2, Vijaya Durga Colony<br>Karimnagar &ndash; 505001, Telangana</p>
     </div>
   </div>
@@ -767,5 +797,10 @@ document.getElementById("enquiry").addEventListener("submit", function(e){
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
+<a class="wa-fab" href="https://wa.me/918142168446?text=Hi%20CVV%20Technologies%2C%20I%27d%20like%20to%20enquire%20about%20your%20services" target="_blank" rel="noopener" aria-label="Chat with CVV Technologies on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.42 1.31-1.95 1.36-.5.05-1.13.07-1.82-.11-.42-.11-.96-.29-1.65-.58-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36l.56.01c.18 0 .42-.7.66.5.24.58.82 2 .89 2.14.7.14.12.31.02.51-.1.2-.14.32-.29.49l-.43.5c-.14.14-.29.3-.12.58.17.29.75 1.24 1.61 2 1.11.99 2.04 1.3 2.33 1.44.29.15.46.12.63-.7.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.71-.17 1.39Z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
+
 </body>
 </html>
