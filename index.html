@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>CVV Technologies — business software that fits how you actually work</title>
-<meta name="description" content="CVV Technologies builds billing apps, mobile apps, websites and ERP systems for businesses across India. Dynamics 365, Power Platform and custom software.">
+<meta name="description" content="CVV Technologies builds billing apps, mobile apps, websites, healthcare CRM and ERP systems for businesses across India. Dynamics 365, Power Platform and custom software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -230,6 +230,23 @@ a{color:inherit;}
 .work-art .pin-dot{fill:var(--azure-deep);}
 .work-art .route{stroke:var(--azure);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-dasharray:5 8;}
 
+/* second project: divider, flipped layout on desktop */
+.work + .work{margin-top:78px;padding-top:78px;border-top:1px solid var(--rule-soft);}
+.work-alt .work-frame{order:-1;}
+.work-art .panel{fill:var(--white);stroke:var(--rule);stroke-width:1.5;}
+.work-art .panel-tint{fill:var(--wash);stroke:var(--rule-soft);stroke-width:1.5;}
+.work-art .row{stroke:var(--rule);stroke-width:3;stroke-linecap:round;}
+.work-art .row-dark{stroke:var(--ink-soft);stroke-width:3;stroke-linecap:round;opacity:.55;}
+.work-art .avatar{fill:var(--wash);stroke:var(--azure-deep);stroke-width:1.6;}
+.work-art .slot{fill:var(--rule-soft);}
+.work-art .slot-on{fill:var(--azure);}
+.work-art .cross{fill:var(--azure-deep);}
+.work-art .ecg{stroke:var(--rule);stroke-width:2;fill:none;}
+.work-art .ecg-live{stroke:var(--azure-deep);stroke-width:2.6;fill:none;stroke-linecap:round;
+  stroke-linejoin:round;stroke-dasharray:58 420;animation:trace 3.6s linear infinite;}
+@keyframes trace{from{stroke-dashoffset:478;}to{stroke-dashoffset:0;}}
+@media (prefers-reduced-motion:reduce){ .work-art .ecg-live{animation:none;stroke-dasharray:none;} }
+
 /* platforms */
 .plat{display:flex;flex-wrap:wrap;gap:11px;}
 .plat span{
@@ -349,6 +366,8 @@ footer{background:var(--white);border-top:1px solid var(--rule-soft);}
 }
 @media (max-width:940px){
   .hero .wrap,.contact,.work{grid-template-columns:1fr;gap:48px;}
+  .work-alt .work-frame{order:0;}
+  .work + .work{margin-top:54px;padding-top:54px;}
   .hero{padding:64px 0 76px;}
   .hero h1{max-width:100%;}
   .band{padding:70px 0;}
@@ -561,6 +580,53 @@ footer{background:var(--white);border-top:1px solid var(--rule-soft);}
           <path class="pin" d="M160 30 a20 20 0 0 1 20 20 c0 15 -20 34 -20 34 s-20 -19 -20 -34 a20 20 0 0 1 20 -20 Z"/>
           <circle class="pin-dot" cx="160" cy="50" r="7"/>
           <path class="route" d="M52 108 C92 66 132 120 160 96"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="work work-alt">
+      <div>
+        <h3>HospitaCRM</h3>
+        <p class="work-line">A healthcare CRM and patient portal for hospitals and clinics &mdash; appointments through to visits, triage, medical records, MRN numbering and billing, with AI-written patient summaries that put the history on the doctor's screen instead of in a folder.</p>
+        <dl class="work-facts">
+          <div><dt>Scope</dt><dd>Multi-tenant portal, CRM, AI summaries</dd></div>
+          <div><dt>Built on</dt><dd>ASP.NET Core, Dataverse, Azure OpenAI</dd></div>
+          <div><dt>Status</dt><dd>Live</dd></div>
+        </dl>
+        <a class="btn work-visit" href="https://hospitacrm.com/" target="_blank" rel="noopener">Visit hospitacrm.com</a>
+      </div>
+
+      <div class="work-frame" aria-hidden="true">
+        <div class="work-bar"><i></i><i></i><i></i><span>hospitacrm.com</span></div>
+        <svg viewBox="0 0 320 190" class="work-art" role="presentation">
+          <!-- patient record -->
+          <rect class="panel" x="10" y="14" width="152" height="92" rx="10"/>
+          <circle class="avatar" cx="36" cy="42" r="13"/>
+          <path class="cross" d="M34.2 36h3.6v4.2H42v3.6h-4.2V48h-3.6v-4.2H30v-3.6h4.2z"/>
+          <line class="row-dark" x1="58" y1="38" x2="120" y2="38"/>
+          <line class="row" x1="58" y1="47" x2="100" y2="47"/>
+          <line class="row" x1="24" y1="70" x2="148" y2="70"/>
+          <line class="row" x1="24" y1="80" x2="130" y2="80"/>
+          <line class="row" x1="24" y1="90" x2="112" y2="90"/>
+
+          <!-- appointment slots -->
+          <rect class="panel-tint" x="176" y="14" width="134" height="92" rx="10"/>
+          <line class="row-dark" x1="190" y1="32" x2="240" y2="32"/>
+          <g>
+            <rect class="slot" x="190" y="46" width="26" height="13" rx="3"/>
+            <rect class="slot" x="222" y="46" width="26" height="13" rx="3"/>
+            <rect class="slot-on" x="254" y="46" width="42" height="13" rx="3"/>
+            <rect class="slot" x="190" y="65" width="26" height="13" rx="3"/>
+            <rect class="slot-on" x="222" y="65" width="42" height="13" rx="3"/>
+            <rect class="slot" x="270" y="65" width="26" height="13" rx="3"/>
+            <rect class="slot" x="190" y="84" width="42" height="13" rx="3"/>
+            <rect class="slot" x="238" y="84" width="26" height="13" rx="3"/>
+          </g>
+
+          <!-- vitals trace -->
+          <rect class="panel" x="10" y="120" width="300" height="56" rx="10"/>
+          <path class="ecg" d="M24 150 H70 l9 -20 l11 40 l9 -27 l7 7 H166 l9 -13 l9 24 l7 -11 H296"/>
+          <path class="ecg-live" d="M24 150 H70 l9 -20 l11 40 l9 -27 l7 7 H166 l9 -13 l9 24 l7 -11 H296"/>
         </svg>
       </div>
     </div>
