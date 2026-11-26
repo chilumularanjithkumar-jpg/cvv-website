@@ -235,6 +235,28 @@ section{scroll-margin-top:84px;}
 .base::before{content:"";position:absolute;inset:0;border-radius:26px;
   background-image:linear-gradient(rgba(0,180,245,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(0,180,245,.18) 1px,transparent 1px);background-size:40px 40px;}
 
+
+/* partners */
+.partner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;}
+.partner-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+.pp{background:var(--paper);border:1px solid var(--rule-soft);border-radius:16px;padding:18px 18px;}
+.pp b{display:block;color:var(--navy);font-size:16px;margin-bottom:4px;}
+.pp span{font-size:14.5px;color:var(--ink-mid);}
+.cover{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;border-radius:24px;padding:32px 30px;box-shadow:var(--shadow-lg);
+  position:relative;overflow:hidden;}
+.cover::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,180,245,.35),transparent);}
+.cover h3{font-size:22px;color:#fff;margin-bottom:6px;}
+.cover > p{color:#C9D6EE;font-size:15px;}
+.cover-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:20px;position:relative;z-index:1;}
+.cover-grid div{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#E3ECFA;}
+.cover-grid div::before{content:"\2713";flex:0 0 22px;height:22px;border-radius:7px;background:rgba(0,180,245,.2);color:var(--cyan);font-weight:700;
+  display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px;}
+.timeline{display:flex;gap:8px;margin-top:24px;position:relative;z-index:1;}
+.timeline span{flex:1;text-align:center;font-size:12.5px;font-weight:600;padding:9px 6px;border-radius:10px;background:rgba(255,255,255,.08);color:#DCE6F7;}
+.timeline span b{display:block;color:var(--amber);font-family:'Bricolage Grotesque',sans-serif;font-size:15px;}
+@media (max-width:980px){.partner{grid-template-columns:1fr;}}
+@media (max-width:640px){.partner-points,.cover-grid{grid-template-columns:1fr;}.timeline{flex-wrap:wrap;}.timeline span{flex:1 1 40%;}}
+
 /* pricing */
 .price-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:stretch;}
 .plan{background:#fff;border:1px solid var(--rule);border-radius:22px;padding:30px 24px 26px;display:flex;flex-direction:column;position:relative;
@@ -385,6 +407,7 @@ footer{background:var(--navy);color:#B9C8E4;}
       <a href="#services">Services</a>
       <a href="#products">Products</a>
       <a href="#poc">Paid POC</a>
+      <a href="#partners">For D365 Partners</a>
       <a href="#pricing">Pricing</a>
       <a href="dynamics-365-support.html">D365 Support</a>
       <a class="talk" href="#talk">Book a POC</a>
@@ -639,6 +662,47 @@ footer{background:var(--navy);color:#B9C8E4;}
   </div>
 </section>
 
+<section class="band band-white" id="partners">
+  <div class="wrap partner">
+    <div class="reveal">
+      <p class="kicker" style="font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-text);margin-bottom:12px">For Dynamics 365 companies</p>
+      <h2 style="font-size:clamp(30px,4vw,46px);color:var(--navy)">Your client wants a demo by Friday? We&rsquo;ll build the POC.</h2>
+      <p style="margin-top:16px;font-size:18px;color:var(--ink-mid)">We build complete Dynamics 365 and Power Platform POCs for implementation companies, consultancies and pre-sales teams &mdash; in 1 to 5 days, covering the full functionality your client asked for, not just a few screens.</p>
+      <div class="partner-points">
+        <div class="pp"><b>Fast turnaround</b><span>Working POC in 1&ndash;5 days, so you can demo while the opportunity is still hot.</span></div>
+        <div class="pp"><b>Full functional coverage</b><span>Every requirement in the brief mapped and built &mdash; with a coverage checklist.</span></div>
+        <div class="pp"><b>White-label</b><span>Delivered under your brand, in your environment or ours. We stay in the background.</span></div>
+        <div class="pp"><b>Confidential</b><span>We sign your NDA. Your client relationship stays yours.</span></div>
+      </div>
+      <div class="hero-actions"><a class="btn btn-solid" href="#talk" data-need="Partner POC (white-label)">Send us your POC brief</a><a class="btn btn-ghost" href="#pricing">See POC prices</a></div>
+    </div>
+    <div class="cover reveal">
+      <h3>What a partner POC covers</h3>
+      <p>Built on Dynamics 365 and Dataverse, ready for your client demo.</p>
+      <div class="cover-grid">
+        <div>Tables, columns &amp; relationships</div>
+        <div>Forms, views &amp; business rules</div>
+        <div>Business process flows</div>
+        <div>C# plugins &amp; Custom APIs</div>
+        <div>Power Automate flows &amp; approvals</div>
+        <div>JavaScript &amp; ribbon buttons</div>
+        <div>Security roles &amp; teams</div>
+        <div>Dashboards &amp; charts</div>
+        <div>Power Pages / portal screens</div>
+        <div>Integration mock-ups &amp; APIs</div>
+        <div>Realistic sample data</div>
+        <div>Functional document &amp; demo script</div>
+      </div>
+      <div class="timeline">
+        <span><b>Day 0</b>Brief &amp; NDA</span>
+        <span><b>Day 1</b>Data model</span>
+        <span><b>Day 2&ndash;4</b>Build</span>
+        <span><b>Day 5</b>Handover</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="band band-white" id="pricing">
   <div class="wrap">
     <div class="band-head center reveal">
@@ -775,6 +839,7 @@ footer{background:var(--navy);color:#B9C8E4;}
         <select id="kind" name="kind">
           <option>Quick POC (1-3 days)</option>
           <option>Extended POC (1-5 days)</option>
+          <option>Partner POC (white-label)</option>
           <option>Solution Package</option>
           <option>Application maintenance (hourly)</option>
           <option>ProjectFlow 360 demo</option>
@@ -816,6 +881,7 @@ footer{background:var(--navy);color:#B9C8E4;}
     <div class="foot-col">
       <h4>Services</h4>
       <a href="#poc">Paid POC</a>
+      <a href="#partners">POCs for D365 partners</a>
       <a href="#pricing">Pricing</a>
       <a href="#services">Dynamics 365 &amp; Power Platform</a>
       <a href="#services">Mobile apps</a>
